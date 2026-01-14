@@ -1,10 +1,12 @@
 package stepdefinitions;
 
+import constants.ConfigFile;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import pages.Login;
+import utils.ConfigReader;
 import utils.DriverManagement;
 import utils.ExtentReportManagement;
 
@@ -20,7 +22,7 @@ public class MyStepdefs {
 
     @When("navigate to google.com")
     public void navigateToGoogleCom() {
-        driver.get("https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_button_disabled");
+        driver.get(ConfigReader.getSpecificProperty(ConfigFile.APP_CONFIG,"APP_URL"));
         login.clickLoginButton();
     }
 
