@@ -13,13 +13,14 @@ public class MyStepdefs {
     Login login = new Login();
 
     @Given("user open browser")
-    public void userOpenBrowser() throws InterruptedException {
-        Thread.sleep(5000);
+    public void userOpenBrowser()  {
+        driver.manage().window().maximize();
+        ExtentReportManagement.pass("step 1");
     }
 
     @When("navigate to google.com")
     public void navigateToGoogleCom() {
-        driver.get("https://www.google.com");
+        driver.get("https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_button_disabled");
         login.clickLoginButton();
     }
 
@@ -32,6 +33,7 @@ public class MyStepdefs {
     @When("navigate to example.com")
     public void navigateToExampleCom() throws InterruptedException {
         driver.get("https://www.example.com");
+        ExtentReportManagement.getStep().pass("Navigate to web successfully");
         Thread.sleep(1000);
         throw new RuntimeException("Login button not found");
 

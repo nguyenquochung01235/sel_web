@@ -6,8 +6,9 @@ import org.testng.annotations.DataProvider;
 
 @CucumberOptions(
         features = "src/test/resources/features",
-        glue = {"stepdefinitions", "hooks"},
-        plugin = {"pretty", "summary"},
+        tags = "@test",
+        glue = {"stepdefinitions", "hooks", },
+        plugin = {"pretty", "summary", "listeners.CucumberListener"},
         monochrome = true,
         dryRun = false
 )
