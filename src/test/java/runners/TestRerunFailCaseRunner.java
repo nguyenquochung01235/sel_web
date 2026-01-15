@@ -5,13 +5,13 @@ import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.DataProvider;
 
 @CucumberOptions(
-        features = "src/test/resources/features",
+        features = "@target/rerun.txt",
         glue = {"stepdefinitions", "hooks", },
-        plugin = {"pretty", "summary", "rerun:target/rerun.txt","listeners.CucumberListener"},
+        plugin = {"pretty", "summary","listeners.CucumberListener"},
         monochrome = true,
         dryRun = false
 )
-public class TestRunner extends AbstractTestNGCucumberTests {
+public class TestRerunFailCaseRunner extends AbstractTestNGCucumberTests {
     @Override
     @DataProvider(parallel = true)
     public Object[][] scenarios() {

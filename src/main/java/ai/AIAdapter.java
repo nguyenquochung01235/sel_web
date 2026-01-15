@@ -1,2 +1,5 @@
-package ai;public class AIAdapter {
+package ai;
+
+public class AIAdapter {
+
 }
