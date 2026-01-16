@@ -13,8 +13,7 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult result) {
-        ExtentTest test = ExtentReportManagement.getExtentReports().createTest(result.getMethod().getMethodName());
-        ExtentReportManagement.setTest(test);
+
     }
 
     @Override

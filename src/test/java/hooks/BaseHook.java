@@ -14,7 +14,9 @@ import java.nio.file.Paths;
 public class BaseHook {
     @BeforeSuite
     public void beforeSuite() throws IOException {
-        Files.deleteIfExists(Paths.get("target/rerun.txt"));
+        if (!System.getProperty("rerun").equals("true")){
+            Files.deleteIfExists(Paths.get("target/rerun.txt"));
+        }
     }
 
     @Before
