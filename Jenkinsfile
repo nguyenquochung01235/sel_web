@@ -48,9 +48,7 @@
             echo 'Archiving test artifacts...'
 
   archiveArtifacts artifacts: '''
-                target/**/*.html,
-                target/**/*.png,
-                target/**/*.log
+                report/*.html,
             ''', fingerprint: true
   }
 
