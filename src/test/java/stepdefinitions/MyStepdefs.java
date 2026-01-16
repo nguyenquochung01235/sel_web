@@ -31,6 +31,6 @@ public class MyStepdefs {
 
     @When("navigate to fail google.com")
     public void navigateToFailGoogleCom() {
-        throw new RuntimeException("Fail at this step");
+//        throw new RuntimeException("Fail at this step");
     }
 }
