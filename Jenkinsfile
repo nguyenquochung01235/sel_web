@@ -41,13 +41,13 @@ pipeline {
           }
         }
 
-      stage('Build & Run Tests') {
-        steps {
-          sh '''
-            mvn clean test
-          '''
-        }
-      }
+        stage('Build & Run Tests') {
+            steps {
+                sh '''
+                    mvn clean test
+                '''
+                }
+            }
 
   stage('Rerun Failed Tests') {
     when {
@@ -73,6 +73,7 @@ pipeline {
       archiveArtifacts artifacts: '''
         report/*.html,
       ''', fingerprint: true
+      publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, icon: '', keepAll: false, reportDir: 'report', reportFiles: '*.html', reportName: 'Extent Report', reportTitles: '', useWrapperFileDirectly: true])
     }
 
     success {
