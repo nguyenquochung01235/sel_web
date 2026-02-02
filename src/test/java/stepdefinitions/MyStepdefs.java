@@ -14,11 +14,6 @@ public class MyStepdefs {
     WebDriver driver = DriverManagement.getDriver();
     Login login = new Login();
 
-    @Given("user open browser")
-    public void userOpenBrowser()  {
-        driver.manage().window().maximize();
-        ExtentReportManagement.pass("step 1");
-    }
 
     @When("navigate to google.com")
     public void navigateToGoogleCom() {
@@ -26,7 +21,7 @@ public class MyStepdefs {
         login.clickLoginButton();
     }
 
-    @Then("close browser")
+    @Then("close browser1")
     public void closeBrowser() throws InterruptedException {
         Thread.sleep(5000);
 
