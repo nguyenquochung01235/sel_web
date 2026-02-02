@@ -73,7 +73,6 @@ pipeline {
       archiveArtifacts artifacts: '''
         report/*.html,
       ''', fingerprint: true
-      publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, icon: '', keepAll: false, reportDir: 'report', reportFiles: '*.html', reportName: 'Extent Report', reportTitles: '', useWrapperFileDirectly: true])
     }
 
     success {
