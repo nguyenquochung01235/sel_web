@@ -15,12 +15,38 @@ public class ExcelReader {
     // READ EXCEL AS WORKBOOK
     // =========================
 
-    private static Workbook getWorkbook(String filePath) {
+    public static Workbook getWorkbook(String filePath) {
         try {
             return new XSSFWorkbook(new FileInputStream(filePath));
         } catch (IOException e) {
             throw new RuntimeException("Unable to read Excel file: " + filePath, e);
         }
+    }
+
+    public static String[] getLoginData(String filePath, String sheetName, String roleName){
+        Workbook workbook = getWorkbook(filePath);
+        Sheet sheet = workbook.getSheet(sheetName);
+        int lastRow = sheet.getLastRowNum();
+
+        for(int i = 1; i<=lastRow; i++){
+            Row row = sheet.getRow(i);
+            String role = row.getCell(2).getStringCellValue();
+            if(role.equalsIgnoreCase(roleName)){
+                String username = "";
+                String password = "";
+                if(row.getCell(0) != null){
+                    username = row.getCell(0).getStringCellValue();
+                }
+                if(row.getCell(1) != null){
+                    password = row.getCell(1).getStringCellValue();
+                }
+
+                return  new String[]{username,password};
+            }
+        }
+
+
+        throw new RuntimeException("Role not found in Excel file: " + roleName);
     }
 
     // =========================

@@ -1,7 +1,9 @@
 package pages.properties;
 
 public enum TestProperties {
-    LOGIN_PAGE("login.page.properties");
+    LOGIN_PAGE("login.config.properties"),
+
+    HOME_PAGE("homepage.config.properties");
 
     private final String fileName;
 
