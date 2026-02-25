@@ -4,9 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
-import pages.Login;
 import utils.DriverManagement;
-import utils.ExtentReportManagement;
 
 public class MyStepdefs {
     WebDriver driver = DriverManagement.getDriver();

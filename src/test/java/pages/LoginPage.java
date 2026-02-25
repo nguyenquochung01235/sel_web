@@ -5,7 +5,7 @@ import pages.properties.TestProperties;
 import utils.*;
 
 
-public class Login {
+public class LoginPage {
     WebDriver driver = DriverManagement.getDriver();
     ElementHandler elementHandler = new ElementHandler();
     private static final String LOGIN_PAGE_PROPERTIES = TestProperties.LOGIN_PAGE.getTestPropertiesFileName();
